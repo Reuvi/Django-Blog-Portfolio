@@ -1,0 +1,59 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="/media/me.png" class="img-fluid" alt="Your Image">
+        </div>
+        <div class="col-md-6">
+            <h1>The CSV of Me</h1>
+            <p>python, java, javascript, html5, css3, c, physics, coding, game development, cybersecurity, web development, AI, Django, Bootstrap, SQL, XSS, Postgres, books, existentialism, guitar, Legos, football, wrestling, Jewish</p>
+            <h3>Qualifications</h3>
+            <ul>
+                <li>GFACT Certified</li>
+                <li>AP-CSA 5</li>
+                <li>InspiritAI Scholor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <h3 class="pr-3">My Resume</h3>
+        <a href="{% url 'pdf-view' %}" target="_blank" class="btn btn-primary">Open PDF</a>
+    </div>
+    <div class="article-metadata text-center mt-5">
+        <h1 class="text-dark font-weight-bold">About Me</h1>
+    </div>
+    <div class="row">
+        <p style="text-indent: 40px">
+            <blockquote style="text-indent: 40px">
+                Hi, I’m Reuven Asher Israeli, and I live in Ocean Township, New Jersey. Science and mathematics have always intrigued me, consistently pulling me into their realms. Ever since I was a little kid I've had a passion for mathematics. As I grew older, this love evolved into a fascination with physics. During my elementary years, I delved deeply into topics like space, black holes, and the universe. This interest only intensified after reading “A Brief History of Time” by Stephen Hawking, which sparked my fascination with Einstein's theory of relativity and the way space bends light. I have vivid memories of my younger self, sitting behind a giant cloud chamber in my room, with dry ice larger than my head, eagerly anticipating the whoosh of gamma particle emissions on my camera for my science fair project.
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                My fascination with physics naturally led me to a love for coding. In eighth grade, I discovered Python, and I've been coding in Python ever since. I began with game development using “scratch”, then progressed to Python's Turtle library, and eventually to the Pygame package. I recreated classics like “Mario Brothers” and my all-time favorite board game, “Backgammon.” My curiosity then led me to Java, where I learned about object-oriented programming. To apply what I learned, I developed “command line chess”, an over the computer ASCII chess battler. Currently, I'm working with a team of seven people, coding a large Roblox game, set to release this summer in Lua. However, video game development isn't my only tech venture. I'm also well-versed in cybersecurity. I taught myself C and became a three-time national cyber finalist in “America's Cyber Start Program,” earning high honors and prestige in various competitions along the way (see portfolio). Whether it's web exploitation, binary exploitation, forensic analysis, cryptography, or reverse engineering, I've trained myself to become proficient in discovering their hidden vulnerabilities.
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                Understanding the inner workings and the "why" of life has always captivated me and keeps me deeply engaged in this industry. Recently, I've delved into web development and AI. Last summer, with a team of eight peers, I developed an AI model using neural networks that can detect pneumonia from X-ray images (see portfolio). Subsequently, I began working on (and continue to work on) my dream project: creating AI glasses to assist the visually impaired in seeing. Inspired by my partially blind cousin, I've been diligently working to bring this product to market. I'm currently focused on training the AI to detect moving cars on the road, alerting the user of potential dangers. Regarding web development, this site is one of my greatest achievements. I began with freeCodeCamp, where I learned HTML5, CSS3, and JavaScript, the three fundamentals for any website. Combining this with my Python knowledge, I taught myself the Django framework and the front-end Bootstrap 4 CSS library to design and operate this website. In the past, I've also learned SQL from my cybersecurity exploits with SQL injections, and I've taken steps to make this site XSS secure. The site is using Postgres as its production database.
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                Apart from programming, I have a deep love for books. I enjoy diving into the mystical world of Harry Potter or exploring the gritty political landscape of “The Song of Ice and Fire Series” (Unofficially known as the “Game of Thrones Books”). I find myself unable to put books down once I start reading. Recently, I was inspired by a philosophical and existentialism mentor of mine, which sparked a newfound interest in existentialist literature. "Moby Dick" has become my current favorite read, offering a unique perspective on life and how we should live it. I occasionally post essays on existentialist literature in my blogs, so if you enjoy them, feel free to leave a comment. Currently, I'm engrossed in "Meditations" by Marcus Aurelius, and it has been an enlightening experience so far. Stay tuned for future updates; I may create a page on this site to share my personal book list!
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                I am also passionate about music. I have been playing the acoustic guitar for 8 years, finding solace and escape from the complexities of life through its melodies. Playing guitar allows me to explore the unknown, weaving my emotions into the fabric of the universe. Over the years, I have composed several songs, one of which, "Broken Heart," I released on my YouTube channel in 2019. While I used to upload more frequently, I have recently reduced my uploads. My love for creation began with my fascination with Legos. I am addicted to the act of creating, and my mind is always engaged in various projects. My Lego Death Star still sits on my dresser, a reminder of my love for building. Additionally, I am an athlete. Football has been a passion of mine since childhood. I started as my little league's "designated rusher," charging into enemy lines to tackle the quarterback. In high school, I played varsity football and fell in love with the offensive line. The camaraderie and friendships forged on the field are invaluable to me. Football taught me to be fearless and to tackle problems head-on. I also tried out for the wrestling team, which provided a stark contrast to football. Wrestling instilled in me grit, determination, and an unwillingness to give up. The challenges and pain of the sport molded me into someone who believes that hard work and effort always yield results. Consistency, I've learned, is the key to success in all aspects of life.
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                I grew up in a Jewish family, adhering to Modern Orthodox traditions, and have been part of a Jewish community for most of my life. My family includes my mother, Deborah Israeli, my father, Dr. Avi Israeli, and my three younger sisters, Leah, Sarah, and Rebecca Israeli. We also have two pets, my dog, Lillee, and my turtle, Tina. As a child, I would spend every Saturday after temple playing ball with my friends. This time allowed me to disconnect from the digital world and develop socially and emotionally, a value I hope to instill in my children one day.
+                </blockquote>
+                
+                <blockquote style="text-indent: 40px">
+                There's much more to me than I can fit on one page. If you want to learn more, feel free to reach out. My contact information is on the right side of the page. You can also read my blogs, where I share my intellectual opinions and insights on various topics.
+                </blockquote>
+                
+            </p>
+    </div>
+</div>
+{% endblock content %}

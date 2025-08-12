@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>    
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/portfolio.css' %}">
+
+    {% if title%}
+        <title>Reuvi Israeli - {{ title }}</title>
+    {% else %}
+        <title>Reuvi Israeli</title>
+    {% endif %}
+
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Reuven Israeli</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'blog-portfolio' %}">Portfolio</a>
+                <a class="nav-item nav-link" href="{% url 'blog-blog' %}">Blog</a>
+              </div>
+              <!-- Navbar Right Side -->
+              <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+
+      <main role="main" class="container">
+        <div class="row">
+          <div class="col-md-8">
+            {% if messages %}
+              {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            {% endif %}
+            {% block content %}{% endblock %}
+          </div>
+          <div class="col-md-4">
+            <div class="content-section">
+              <h3>Contact Me?</h3>
+              <p class='text-muted'><i>My philosophy -> "Each moment becomes precious precisely because it is finite, urging us to live fully and authentically in the present"</i>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Phone: <a href="tel:9086700889">908-670-0889</a></li>
+                    <li class="list-group-item list-group-item-light">Email: <a href="mailto:reuvi.israeli@gmail.com">reuvi.israeli@gmail.com</a></li>
+                    <li class="list-group-item list-group-item-light">Instagram: <a href="https://www.instagram.com/reuvi_israeli/">Reuvi's Instagram</a></li>
+                    <li class="list-group-item list-group-item-light">Youtube: <a href="https://www.youtube.com/channel/UC2ZuKORHf7acG41PofVgUew">Reuvi's Youtube Channel</a></li>
+                    <li class="list-group-item list-group-item-light">Github: <a href="https://github.com/Reuvi">Reuvi's Github</a></li>
+                </ul>
+              </p>
+            </div>
+            <img src="/media/theboyz.jpg" class="img-fluid" alt="Your Image">
+            <img src="/media/football.jpg" class="img-fluid" alt="Your Image">
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <span class="text-muted">© {{ "now" | date:"Y" }} Reuven Asher Israeli</span>
+        </div>
+    </footer>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

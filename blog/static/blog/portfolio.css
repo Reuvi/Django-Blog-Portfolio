@@ -1,0 +1,55 @@
+.portfolio {
+    max-width: 750px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px; /* Add border radius to create a "card" effect */
+    background-color: #f0f0f0; /* Set background color for the "card" */
+    padding: 20px; /* Add padding inside the "card" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.portfolio-item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05); /* Scale the card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.portfolio-item h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Change font family for the heading */
+    font-size: 1.5rem; /* Increase font size for a more professional look */
+    margin-bottom: 10px;
+}
+
+.portfolio-item p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Change font family for the paragraph */
+    font-size: 1rem; /* Adjust font size as needed */
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        max-width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+
